@@ -5,12 +5,9 @@
 
 - hosts: all
   sudo: True
-  vars:
-    nginx_daemon: "/usr/local/nginx/sbin/nginx"
-    nginx_conf_location: "/etc/nginx/nginx.conf"
   tasks:
     # Tests
-    - name: Check Launch page is up
+    - name: Check Ghost is running
       shell: curl -I --stderr /dev/null http://localhost:2368 | head -1 | cut -d' ' -f2
       register: curl_output
     - debug: msg="NodeJS App was installed in {{curl_output.stdout}}"
