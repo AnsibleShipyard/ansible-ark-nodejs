@@ -4,7 +4,7 @@
 #
 # Requires:
 # ansibleshipyard/nodejs
-#   https://github.com/AnsibleShipyard/base-ubuntu-nodejs
+#   https://github.com/AnsibleShipyard/nodejs
 #
 
 FROM ansibleshipyard/nodejs
