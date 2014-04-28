@@ -1,0 +1,71 @@
+# Note: Docker detection is implicit. You need not worry
+#       about some of the settings below in these cases
+#       (i.e. foreman).
+
+# Version to download
+#!ark_nodejs_app_version: '0.1.13'
+
+# Name of the app
+#!ark_nodejs_app_basename: 'generic-nodejs-app'
+
+# The naming scheme, some use `name-v0.0.0`, where others
+# use `name-0.0.0`. By default the naming scheme uses the
+# version `v` identifier. Override this to your liking.
+#!ark_nodejs_app_name: '{{ark_nodejs_app_basename}}-v{{ark_nodejs_app_version}}'
+
+# Base location to install `nodejs` apps.
+ark_nodejs_install_root: '/nodejs-apps'
+
+# Install mode. Remote for URL, local for local dir.
+ark_nodejs_install_mode: 'remote' # ['remote', 'local']
+
+# If local install mode is chosen, then this refers to
+# the local folder which will contain the artifact.
+# It defaults to the relative './artifacts' dir which
+# is recommended.
+ark_nodejs_local_loc: 'artifacts'
+
+# Default archive type
+ark_nodejs_archive_type: 'zip'
+
+# Full name of the archive
+#!ark_nodejs_archive_file: '{{ark_nodejs_app_name}}.{{ark_nodejs_archive_type}}'
+
+# If remote install mode is chosen, then this refers to
+# the base url which contains the artifact.
+#!ark_nodejs_remote_baseurl: 'http://localhost/downloads'
+#!ark_nodejs_remote_fullurl: '{{ark_nodejs_remote_baseurl}}/{{ark_nodejs_archive_file}}
+
+# Based on the install location, this ark will deposite the
+# application to the following location.
+#!ark_nodejs_install_loc: '{{ark_nodejs_install_root}}/{{ark_nodejs_app_basename}}'
+
+# Location of the `nodejs` application file.
+#!ark_nodejs_app_file: 'app.js'
+#!ark_nodejs_exec: '{{ark_nodejs_install_loc}}/{{ark_nodejs_app_name}}/{{ark_nodejs_app_file}}'
+
+# The desired symlink to create, useful if you have multiple
+# versions and you'd like to keep them but symlink to the
+# newest.
+#!ark_nodejs_symlink: '{{ark_nodejs_install_loc}}.js'
+
+# The running mode for the `nodejs` app.
+ark_nodejs_mode: 'production'
+
+# Disable/Enable foreman
+# You would want to disable foreman here if you have
+# multiple nodejs apps.
+# If your using docker then this flag whether true or
+# false will not affect you.
+ark_nodejs_disable_foreman: True # [True,False]
+
+# Foreman port, which is by default 80.
+# This is most likely the only opinionated directive of this
+# ansible role. Highly suggest that it be changed unless you
+# know this `nodejs` app will be the only one running.
+ark_nodejs_port: '80'
+
+# When not using docker and foreman enabled,
+# these will be installed in global space.
+ark_nodejs_global_packages:
+  - foreman

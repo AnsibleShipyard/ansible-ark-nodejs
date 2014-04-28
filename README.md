@@ -1,4 +1,10 @@
 ansible-ark-nodejs
-==================
+=======================
 
-Ansible Ark for NodeJS
+Playbook for a NodeJS Ark
+
+Support open source!
+
+## How to use
+
+See
