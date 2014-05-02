@@ -1,14 +1,14 @@
 #
-# ansibleshipyard/ark-nodejs-test
-#   docker build -t ansibleshipyard/ark-nodejs-test .
+# jasongiedymin/ansible-ark-nodejs
+#   docker build -t jasongiedymin/ansible-ark-nodejs .
 #
 # Requires:
-# ansibleshipyard/nodejs
-#   https://github.com/AnsibleShipyard/nodejs
+# jasongiedymin/ansible-nodejs
+#   https://github.com/AnsibleShipyard/ansible-nodejs
 #
 
-FROM ansibleshipyard/nodejs
-MAINTAINER ansibleshipyard
+FROM jasongiedymin/ansible-nodejs
+MAINTAINER AnsibleShipyard
 
 # Working dir
 ENV WORKDIR /tmp/build/ansible-ark-nodejs

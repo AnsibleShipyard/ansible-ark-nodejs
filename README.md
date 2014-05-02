@@ -5,6 +5,11 @@ Playbook for a NodeJS Ark
 
 Support open source!
 
+## The Dockerfile
+
+The Dockerfile represents an example output of using the ansible ark playbook.
+It has been served up to docker.io for demonstration purposes.
+
 ## How to use
 
 See this integration test [playbook](https://github.com/AnsibleShipyard/ansible-ark-nodejs/blob/master/tests/playbook.yml)
