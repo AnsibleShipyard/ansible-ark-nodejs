@@ -19,6 +19,7 @@
     ark_nodejs_app_file: 'index.js'
     ark_nodejs_exec: '{{ark_nodejs_install_loc}}/{{ark_nodejs_app_name}}/{{ark_nodejs_app_file}}'
     ark_nodejs_symlink: '{{ark_nodejs_install_loc}}.js'
+    ark_nodejs_service_name: 'ghost-app'
   roles:
     - role: ./
   tasks:

@@ -52,18 +52,14 @@ ark_nodejs_archive_type: 'zip'
 # The running mode for the `nodejs` app.
 ark_nodejs_mode: 'production'
 
-# Disable/Enable foreman
-# You would want to disable foreman here if you have
-# multiple nodejs apps.
-# If your using docker then this flag whether true or
-# false will not affect you.
-ark_nodejs_disable_foreman: True # [True,False]
-
 # Foreman port, which is by default 80.
 # This is most likely the only opinionated directive of this
 # ansible role. Highly suggest that it be changed unless you
 # know this `nodejs` app will be the only one running.
-ark_nodejs_port: '80'
+ark_nodejs_port: '3000'
+
+# The Name to call the foreman job
+#! ark_nodejs_service_name: 'ark-nodejs-app'
 
 # When not using docker and foreman enabled,
 # these will be installed in global space.

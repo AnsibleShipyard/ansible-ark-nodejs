@@ -42,10 +42,6 @@
         state=link
   when: docker_installed.rc == 0
 
-- name: Create .env file
-  template: src=env.j2 dest="{{ark_nodejs_install_loc}}/{{ark_nodejs_app_name}}/.env"
-    owner="root" group="root"
-
 - name: NPM Install global packages
   npm: name={{item}} global=yes
   with_items: ark_nodejs_global_packages
@@ -54,16 +50,8 @@
   command: npm install --production
            chdir="{{ark_nodejs_install_loc}}/{{ark_nodejs_app_name}}"
 
-- name: Create Init.d
-  shell: nf export -o /etc/init
-         chdir="{{ark_nodejs_install_loc}}/{{ark_nodejs_app_name}}"
-  register: ark_nodejs_output
-
-- name: Overlay foreman init
-  template: src=foreman-web-1.j2 dest="/etc/init/foreman-web-1.conf"
-    owner="root" group="root"
+- name: Create init.d script
+  template: src=init.j2 dest="/etc/init.d/{{ark_nodejs_service_name}}"
+    owner="root" group="root" mode=0755
   notify:
     - Restart nodejs app
-
-- debug: msg="{{ark_nodejs_output.stdout}}"
-- debug: msg="{{ark_nodejs_output.stderr}}"
