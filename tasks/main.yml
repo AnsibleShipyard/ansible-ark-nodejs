@@ -25,7 +25,7 @@
   file: path={{ark_nodejs_install_loc}}/{{ark_nodejs_app_name}}
         state=directory
 
-- name: Unzip artifact
+- name: Unzip artifact {{ark_nodejs_archive_file}} within {{ark_nodejs_install_loc}}
   command: unzip -o {{ark_nodejs_archive_file}} -d {{ark_nodejs_app_name}}
            chdir="{{ark_nodejs_install_loc}}"
 
